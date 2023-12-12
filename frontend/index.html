@@ -1,0 +1,55 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Testing</title>
+</head>
+<body>
+  <h1>API Testing</h1>
+
+  <h2>User Registration</h2>
+  <form id="registrationForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <button type="button" onclick="registerUser()">Register User</button>
+  </form>
+
+  <script>
+    function registerUser() {
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Replace with the actual URL of your registration endpoint
+      const apiUrl = 'http://localhost:8080/api/user/register';
+
+      // Make a POST request to the registration endpoint
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, email, password }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        alert('User registered successfully');
+      })
+      .catch(error => {
+        console.error(error);
+        alert('Error registering user');
+      });
+    }
+  </script>
+</body>
+</html>

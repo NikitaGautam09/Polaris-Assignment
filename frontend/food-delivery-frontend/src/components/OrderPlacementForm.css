@@ -1,0 +1,58 @@
+/* OrderPlacementForm.css */
+
+.food-cards-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .food-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .food-card {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .food-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .food-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .food-card h3 {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .selected {
+    border: 2px solid #4CAF50;
+  }
+  
+  .selected-items {
+    margin-top: 20px;
+  }
+  
+  .selected-items h3 {
+    text-align: center;
+  }
+  
+  .selected-items ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .selected-items li {
+    margin: 5px 0;
+  }
+  
